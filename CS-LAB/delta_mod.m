@@ -1,0 +1,1 @@
+function [y MSE]=Delta_Modulation(del2, A) A=5; d=1;t=0:2*pi/100:2*pi; x=A*sqrt(t);plot(x)hold ony=[0];xr=0;for i=1:length(x)-1    if xr(i)<=x(i)        d=1;        xr(i+1)=xr(i)+d;    else        d=0;        xr(i+1)=xr(i)-d;    end    y=[y d];    endstairs(xr)hold offMSE=sum((x-xr).^2)/length(x);end
